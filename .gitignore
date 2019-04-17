@@ -67,3 +67,5 @@ show_twem_stats
 
 Makefile
 Makefile.in
+.idea/
+cmake-build-debug/

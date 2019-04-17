@@ -123,7 +123,7 @@ core_ctx_create(struct instance *nci, int role)
         if (status != NC_OK) {
             goto error;
         }
-
+        //manage进程初始化？
         status = manage_init(ctx, nci->addr, nci->port);
         if (status != NC_OK) {
             goto error;

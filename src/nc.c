@@ -28,6 +28,7 @@
 #include <nc_conf.h>
 #include <nc_signal.h>
 
+
 #define NC_CONF_PATH        "conf/nutcrackers.yml"
 
 #define NC_LOG_DEFAULT      LOG_NOTICE
@@ -498,6 +499,11 @@ nc_test_conf(struct instance *nci, bool test)
     return true;
 }
 
+/**
+ * 状态初始化函数
+ * @param nci
+ * @return
+ */
 static rstatus_t
 nc_pre_run(struct instance *nci)
 {
@@ -559,6 +565,10 @@ nc_post_run(struct instance *nci)
     log_deinit();
 }
 
+/**
+ * 创建多线程并分派任务
+ * @param nci
+ */
 static void
 nc_run(struct instance *nci)
 {

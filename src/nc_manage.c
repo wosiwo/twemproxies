@@ -776,6 +776,13 @@ manage_listen(struct context *ctx, struct conn *p)
 }
 
 
+/**
+ * manage进程初始化？
+ * @param ctx
+ * @param addr
+ * @param port
+ * @return
+ */
 rstatus_t
 manage_init(struct context *ctx, char *addr, uint16_t port)
 {
@@ -810,7 +817,7 @@ manage_init(struct context *ctx, char *addr, uint16_t port)
     if (p == NULL) {
         return NC_ERROR;
     }
-
+    //端口监听
     status = manage_listen(ctx, p);
     if (status != NC_OK) {
         p->close(ctx, p);
